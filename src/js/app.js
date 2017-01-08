@@ -22,7 +22,7 @@ class Simon {
   bindListeners() {
     // bind click listeners on buttons
     this.elements.buttons.forEach((ele) => {
-      ele.children[0].o2nclick = this.recordSequence.bind(this)
+      ele.children[0].onclick = this.recordSequence.bind(this)
       ele.children[0].addEventListener('click', this.buttonEffects.bind(this))
     })
     this.elements.startStop.onclick = this.startStop.bind(this)
@@ -35,12 +35,13 @@ class Simon {
   startStop(e) {
     if(!this.started) {
       this.started = true;
+      this.playerTurn = false;
       this.addToSequence()
       this.playSequence();
     } else {
       this.started = false;
     }
-    console.log('start/stop');
+    console.log('start/stop ', this.started);
   }
 
   reset(e) {
@@ -48,6 +49,7 @@ class Simon {
     this.userSequence = [];
     this.started = false;
     this.strict = false;
+    this.playerTurn = false;
     this.elements.strict.children[0].checked = true;
     //stops all actions
     this.changeCounter('RESET');
@@ -148,7 +150,7 @@ class Simon {
         this.reset();
         this.failAlert();
         window.setTimeout(() => {
-          this.startStop();
+          // this.startStop();
         }, 1000);
       } else {
         this.failAlert();
