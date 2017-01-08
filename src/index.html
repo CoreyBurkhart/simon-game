@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+  <meta name="description" content="Play the classic game Simon. A recreation by Corey Burkhart.">
+  <meta lang="en" charset="utf-8">
+  <title>Play Simon</title>
+  <link rel="stylesheet" href="/css/app.css" media="screen" title="no title">
+</head>
+<body>
+  <fieldset>
+    <!-- simon header -->
+    <h1>Simon</h1>
+    <!-- start/stop button-->
+    <input type="button" id="start-stop" name="start-stop" value="start">
+    <!-- reset button-->
+    <input type="button" id="reset" name="reset" value="reset">
+    <!-- difficulty -->
+    <span id="speed-container">
+      <label>Speed</label>
+      <input type="range" id="speed" min="1" max="3" name="name" value="" list="speeds">
+    </span>
+    <datalist id="speeds">
+      <option value="1">slow</option>
+      <option value="2">normal</option>
+      <option value="3">fast</option>
+    </datalist>
+    <!-- step count display-->
+    <span id="counter">
+      <sup>Count</sup>
+      <span id="counter-display">0</span>
+    </span>
+    <!-- strict mode button (slider)-->
+    <div id="strict-container">
+      <sup>Strict Mode</sup>
+      <span id="strict-toggle" style="display: block">
+        <input id="off" type="radio" name="strict-toggle" value="" checked="true">
+        <label for="off"></label>
+        <input id="on" type="radio" name="strict-toggle" value="">
+        <label for="on"></label>
+      </span>
+    </div>
+  </fieldset>
+  <div id="game-button-container">
+    <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(-90deg)">
+      <path id="button0" d="M 25 25
+      A 275 275, 0, 0, 1, 275 275
+      M 25 25
+      L 25 150
+      A 175 175, 0, 0, 1, 150 275
+      L 275 275"
+      stroke="white" fill="green" stroke-width="2" fill-opacity="0.50"/>
+    </svg>
+    <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+      <path id="button1" d="M 25 25
+                A 275 275, 0, 0, 1, 275 275
+                M 25 25
+                L 25 150
+                A 175 175, 0, 0, 1, 150 275
+                L 275 275"
+                stroke="white" fill="red" stroke-width="2" fill-opacity="0.50"/>
+    </svg>
+    <br>
+    <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(-180deg)">
+      <path id="button2" d="M 25 25
+      A 275 275, 0, 0, 1, 275 275
+      M 25 25
+      L 25 150
+      A 175 175, 0, 0, 1, 150 275
+      L 275 275"
+      stroke="white" fill="yellow" stroke-width="2" fill-opacity="1"/>
+    </svg>
+    <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(90deg)">
+      <path id="button3" d="M 25 25
+                A 275 275, 0, 0, 1, 275 275
+                M 25 25
+                L 25 150
+                A 175 175, 0, 0, 1, 150 275
+                L 275 275"
+                stroke="white" fill="blue" stroke-width="2" fill-opacity="0.50"/>
+    </svg>
+
+  </div>
+  <audio src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></audio>
+  <audio src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></audio>
+  <audio src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></audio>
+  <audio src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></audio>
+  <script src="./js/app.js" charset="utf-8"></script>
+</body>
