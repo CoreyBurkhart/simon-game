@@ -3,7 +3,7 @@
   <meta name="description" content="Play the classic game Simon. A recreation by Corey Burkhart.">
   <meta lang="en" charset="utf-8">
   <title>Play Simon</title>
-  <link rel="stylesheet" href="/css/app.css" media="screen" title="no title">
+  <link rel="stylesheet" href="./css/app.css" media="screen" title="no title">
 </head>
 <body>
   <fieldset>
@@ -47,7 +47,7 @@
       L 25 150
       A 175 175, 0, 0, 1, 150 275
       L 275 275"
-      stroke="white" fill="green" stroke-width="2" fill-opacity="0.50"/>
+      stroke="white" fill="green" />
     </svg>
     <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
       <path id="button1" d="M 25 25
@@ -56,7 +56,7 @@
                 L 25 150
                 A 175 175, 0, 0, 1, 150 275
                 L 275 275"
-                stroke="white" fill="red" stroke-width="2" fill-opacity="0.50"/>
+                stroke="white" fill="red"/>
     </svg>
     <br>
     <svg width="300" height="300" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(-180deg)">
@@ -75,13 +75,8 @@
                 L 25 150
                 A 175 175, 0, 0, 1, 150 275
                 L 275 275"
-                stroke="white" fill="blue" stroke-width="2" fill-opacity="0.50"/>
+                stroke="white" fill="blue" />
     </svg>
-
   </div>
-  <audio src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"></audio>
-  <audio src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></audio>
-  <audio src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></audio>
-  <audio src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></audio>
-  <script src="./js/app.js" charset="utf-8"></script>
+  <script src="./app.bundle.js" charset="utf-8"></script>
 </body>

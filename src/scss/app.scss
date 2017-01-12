@@ -133,6 +133,10 @@ fieldset {
     }
   }
 }
+svg path {
+  stroke-width: 2;
+  fill-opacity: 0.50;
+}
 
 .button-active {
   fill-opacity: 1;

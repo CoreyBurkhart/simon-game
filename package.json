@@ -4,9 +4,11 @@
   "description": "A simon says game. A free code camp project",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run watch-scss & http-server ./src & google-chrome http://localhost:8080",
+    "dev": "npm run watch-scss & webpack-dev-server &",
     "watch-scss": "mkdir -p src/css && sass --watch src/scss:src/css",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "copy": "cp -ruv ./src/css ./build && cp -uv ./src/index.html ./build",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src/js -d src/lib"
   },
   "repository": {
     "type": "git",
@@ -22,6 +24,11 @@
   },
   "homepage": "https://github.com/CoreyBurkhart/simon-game#readme",
   "devDependencies": {
-    "http-server": "^0.9.0"
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-env": "^1.1.6",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
   }
 }
