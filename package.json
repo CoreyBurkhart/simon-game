@@ -2,8 +2,12 @@
   "name": "simon-says-game",
   "version": "1.0.0",
   "description": "A simon says game. A free code camp project",
-  "main": "index.js",
+  "main": "server.js",
+  "engines": {
+    "node": "7.4.0"
+  },
   "scripts": {
+    "start": "node server.js",
     "dev": "npm run watch-scss & webpack-dev-server &",
     "watch-scss": "mkdir -p src/css && sass --watch src/scss:src/css",
     "copy": "cp -ruv ./src/css ./build && cp -uv ./src/index.html ./build",
@@ -30,5 +34,8 @@
     "babel-preset-env": "^1.1.6",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
   }
 }

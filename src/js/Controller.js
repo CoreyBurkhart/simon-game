@@ -100,14 +100,11 @@ export default class Contoller {
     let val = e.target.value;
     let speed = (2200 - (val * 600)) / 2;
     this.Model.speed = speed;
-    // listen for speed changes and set this.speed. used for timeout
-    console.log('setSpeed ', this.Model.speed);
   }
   playSequence() {
     this.timers = this.View.play([...this.Model.sequence], this.Model.speed)
     //set the turn to player after the sequence is done playing
     Promise.all(this.timers).then(() => {
-      console.log('promise.all triggered');
       this.Model.turn = 'PLAYER';
       delete this.timers;
     })
