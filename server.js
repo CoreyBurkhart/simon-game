@@ -3,10 +3,12 @@ const path = require('path');
 const PORT = process.env.PORT || 8080;
 let app = express();
 
+app.use(express.static(__dirname + 'build'))
+
 app.get('/', function(req, res) {
-  res.render(__dirname + 'build/index.html');
+  res.render(__dirname + 'index');
 });
 
 app.listen(PORT, function() {
-  console.log('Listening');
+  console.log('Server is running!');
 })
