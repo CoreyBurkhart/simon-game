@@ -3,10 +3,10 @@ const path = require('path');
 const PORT = process.env.PORT || 8080;
 let app = express();
 
-app.use(express.static(__dirname + 'build'))
+app.use(express.static(__dirname + '/build'))
 
 app.get('/', function(req, res) {
-  res.render(__dirname + 'index');
+  res.sendFile(__dirname + '/index');
 });
 
 app.listen(PORT, function() {
