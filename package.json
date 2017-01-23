@@ -8,11 +8,11 @@
   },
   "scripts": {
     "start": "node server.js",
-    "dev": "npm run watch-scss & webpack-dev-server &",
-    "watch-scss": "mkdir -p src/css && sass --watch src/scss:src/css",
+    "dev": "node_modules/.bin/webpack-dev-server",
+    "watch-scss": "mkdir -p src/css && sass --watch ./src/scss:./build/css",
     "copy": "cp -ruv ./src/css ./build && cp -uv ./src/index.html ./build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run copy && node_modules/.bin/webpack"
+    "build": "npm run copy && && sass --update src/scss/*.scss build/css && node_modules/.bin/webpack"
   },
   "repository": {
     "type": "git",
